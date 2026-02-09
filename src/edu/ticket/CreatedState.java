@@ -11,7 +11,7 @@ public class CreatedState implements RequestState {
         ticket.setStatus(new AssignedState());
     }
 
-    public void PrintStatus(){
+    public void PrintState(){
         System.out.println("Ticket created");
     }
 }

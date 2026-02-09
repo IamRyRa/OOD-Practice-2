@@ -11,6 +11,6 @@ public class AssignedState implements RequestState {
         ticket.setStatus(new InProgressState());
     }
 
-    public void PrintStatus(){
+    public void PrintState(){
     }
 }

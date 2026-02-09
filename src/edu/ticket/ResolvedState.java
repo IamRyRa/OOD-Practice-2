@@ -5,7 +5,7 @@ public class ResolvedState implements RequestState {
     public void Next(Ticket ticket){   
         ticket.setStatus(new ClosedState()) ;
     }
-    public void PrintStatus(){
+    public void PrintState(){
         System.out.println("Ticket resolved");
     }
 }

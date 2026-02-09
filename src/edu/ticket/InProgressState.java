@@ -10,7 +10,7 @@ public class InProgressState implements RequestState {
         }
         ticket.setStatus(new ResolvedState());
     }
-    public void PrintStatus(){
+    public void PrintState(){
         System.out.println("Working on ticket");
     }
 }
