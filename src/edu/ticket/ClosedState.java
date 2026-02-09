@@ -1,11 +1,8 @@
 package edu.ticket;
 
 public class ClosedState implements RequestState {
-
+    @Override
     public void Next(Ticket ticket){
-
-    }
-    public void PrintState(){
         System.out.println("Ticket closed");
     }
 }

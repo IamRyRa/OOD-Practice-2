@@ -1,16 +1,11 @@
 package edu.ticket;
 
 public class InProgressState implements RequestState {
-
+    @Override
     public void Next(Ticket ticket){
-        if ("BUG".equals(ticket.getType())) {
-            System.out.println("Sending bug response");
-        } else {
-            System.out.println("Sending generic response");
-        }
+        System.out.println("Working on ticket");
+        ticket.getResponseStrategy().executeResponse(ticket);
         ticket.setStatus(new ResolvedState());
     }
-    public void PrintState(){
-        System.out.println("Working on ticket");
-    }
 }
+  

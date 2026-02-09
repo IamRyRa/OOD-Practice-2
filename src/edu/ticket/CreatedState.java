@@ -1,17 +1,10 @@
 package edu.ticket;
 
 public class CreatedState implements RequestState {
-
+    @Override
     public void Next(Ticket ticket){
-        if ("WEB".equals(ticket.getChannel())) {
-            System.out.println("Received from web");
-        } else if ("EMAIL".equals(ticket.getChannel())) {
-            System.out.println("Received from email");
-        }
-        ticket.setStatus(new AssignedState());
-    }
-
-    public void PrintState(){
         System.out.println("Ticket created");
+        ticket.getChannelStrategy().processChannel();
+        ticket.setStatus(new AssignedState());
     }
 }

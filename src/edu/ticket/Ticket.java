@@ -7,59 +7,46 @@ public class Ticket {
     String type;
     String request;
     String response;
+    private ChannelStrategy channelStrategy;
+    private ResponseStrategy responseStrategy;
 
-    public Ticket(int id,String channel, String type) {
+    public Ticket(int id, String channel, String type) {
         this.id = id;
         this.channel = channel;
         this.type = type;
         this.state = new CreatedState();
     }
 
-    public void nextStep(){
+    public void nextStep() {
         state.Next(this);
     }
 
-    public String getStatus() {
-        return state.getClass().getSimpleName();
-    }
+    public void setChannelStrategy(ChannelStrategy cs) { 
+        this.channelStrategy = cs; }
+    public ChannelStrategy getChannelStrategy() {
+         return channelStrategy; }
+    
+    public void setResponseStrategy(ResponseStrategy rs) { 
+        this.responseStrategy = rs; }
+    public ResponseStrategy getResponseStrategy() {
+         return responseStrategy; }
 
-    public void setStatus(RequestState state) {
-        this.state = state;
-    }
-
+    public void setStatus(RequestState state) { 
+        this.state = state; }
+    public RequestState getState() {
+         return state; }
+    public String getStatus() { 
+        return state.getClass().getSimpleName(); }
     public String getChannel() {
-        return channel;
-    }
-
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getRequest() {
-        return request;
-    }
-
-    public void setRequest(String request) {
-        this.request = request;
-    }
-
-    public String getResponse() {
-        return response;
-    }
-
-    public void setResponse(String response) {
-        this.response = response;
-    }
-
+         return channel;
+          }
+    public String getType() { 
+        return type; 
+        }
     public int getId() {
-        return this.id;
-    }
+         return id; }
+    public void setResponse(String response) { 
+        this.response = response; }
+    public void setRequest(String request) {
+         this.request = request; }
 }

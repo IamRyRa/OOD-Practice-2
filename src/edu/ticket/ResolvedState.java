@@ -1,11 +1,9 @@
 package edu.ticket;
 
 public class ResolvedState implements RequestState {
-
+    @Override
     public void Next(Ticket ticket){   
-        ticket.setStatus(new ClosedState()) ;
-    }
-    public void PrintState(){
         System.out.println("Ticket resolved");
+        ticket.setStatus(new ClosedState()) ;
     }
 }
