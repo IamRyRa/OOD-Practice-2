@@ -7,5 +7,10 @@ public class InProgressState implements RequestState {
         ticket.getResponseStrategy().executeResponse(ticket);
         ticket.setStatus(new ResolvedState());
     }
+
+    @Override
+    public void PrintState(){
+        System.out.println("Working on ticket");
+    }
 }
   

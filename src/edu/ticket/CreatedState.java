@@ -7,4 +7,9 @@ public class CreatedState implements RequestState {
         ticket.getChannelStrategy().processChannel();
         ticket.setStatus(new AssignedState());
     }
+    
+    @Override
+    public void PrintState(){
+        System.out.println("Ticket created");
+    }
 }

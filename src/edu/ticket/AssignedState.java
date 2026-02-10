@@ -6,4 +6,8 @@ public class AssignedState implements RequestState {
         ticket.getResponseStrategy().describeAssignment();
         ticket.setStatus(new InProgressState());
     }
+
+    @Override
+    public void PrintState(){
+    }
 }

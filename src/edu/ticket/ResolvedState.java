@@ -6,4 +6,9 @@ public class ResolvedState implements RequestState {
         System.out.println("Ticket resolved");
         ticket.setStatus(new ClosedState()) ;
     }
+    
+    @Override
+    public void PrintState(){
+        System.out.println("Ticket resolved");
+    }
 }
